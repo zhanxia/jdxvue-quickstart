@@ -7,10 +7,10 @@
         "minified": true,
         "newFeature": true
     },
-    "miniprogramRoot": "dist/wx/",
+    "miniprogramRoot": "dist/jd/",
     "compileType": "miniprogram",
     "appid": "touristappid",
-    "projectname": "my-project",
+    "projectname": "{{name}}",
     "condition": {
         "search": {
             "current": -1,
