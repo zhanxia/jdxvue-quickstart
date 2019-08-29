@@ -10,7 +10,7 @@
     "miniprogramRoot": "dist/jd/",
     "compileType": "miniprogram",
     "appid": "touristappid",
-    "projectname": "{{name}}",
+    "projectname": "{{projectname}}",
     "condition": {
         "search": {
             "current": -1,
