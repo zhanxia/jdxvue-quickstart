@@ -45,7 +45,6 @@
 
 <script>
 import card from '@/components/card'
-
 export default {
   data () {
     return {
@@ -65,10 +64,10 @@ export default {
   methods: {
     bindViewTap () {
       const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
+      if (jdmpvuePlatform === 'wx') {
+        jdmpvue.switchTab({ url })
       } else {
-        mpvue.navigateTo({ url })
+        jdmpvue.navigateTo({ url })
       }
     },
     clickHandle (ev) {
@@ -78,7 +77,6 @@ export default {
   },
 
   created () {
-    // let app = getApp()
   }
 }
 </script>

@@ -37,12 +37,7 @@ export default {
   },
 
   created () {
-    let logs
-    if (mpvuePlatform === 'my') {
-      logs = mpvue.getStorageSync({key: 'logs'}).data || []
-    } else {
-      logs = mpvue.getStorageSync('logs') || []
-    }
+    let logs = jdmpvue.getStorageSync('logs') || []
     this.logs = logs.map(log => formatTime(new Date(log)))
   }
 }

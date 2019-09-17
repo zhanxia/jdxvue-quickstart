@@ -11,7 +11,6 @@
 <script>
 // Use Vuex
 import store from './store.js'
-console.log('store', store)
 export default {
   computed: {
     count () {
