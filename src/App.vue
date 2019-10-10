@@ -14,25 +14,25 @@ export default {
      */
 
     let logs
-    if (jdmpvuePlatform === 'my') {
-      logs = jdmpvue.getStorageSync({key: 'logs'}).data || []
+    if (global.jdmpvuePlatform === 'my') {
+      logs = global.jdmpvue.getStorageSync({key: 'logs'}).data || []
       logs.unshift(Date.now())
-      jdmpvue.setStorageSync({
+      global.jdmpvue.setStorageSync({
         key: 'logs',
         data: logs
       })
     } else {
-      logs = jdmpvue.getStorageSync('logs') || []
+      logs = global.jdmpvue.getStorageSync('logs') || []
       logs.unshift(Date.now())
-      jdmpvue.setStorageSync('logs', logs)
+      global.jdmpvue.setStorageSync('logs', logs)
     }
   },
   onLaunch(){
     // 获取用户信息 上报app初始化事件
-    jdmpvue.getSetting({
+    global.jdmpvue.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          jdmpvue.getUserInfo({
+          global.jdmpvue.getUserInfo({
             success: res => {
               // 设置数据
               qd.setData(res.userInfo);

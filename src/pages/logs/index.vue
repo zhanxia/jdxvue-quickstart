@@ -37,7 +37,7 @@ export default {
   },
 
   created () {
-    let logs = jdmpvue.getStorageSync('logs') || []
+    let logs = global.jdmpvue.getStorageSync('logs') || []
     this.logs = logs.map(log => formatTime(new Date(log)))
   }
 }
