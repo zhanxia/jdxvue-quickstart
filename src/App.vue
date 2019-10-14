@@ -1,6 +1,6 @@
 <script>
-import qd from './utils/qd-vapp.js'
-qd.init()
+// import qd from './utils/qd-vapp.js'
+// qd.init()
 
 export default {
   created () {
@@ -14,25 +14,25 @@ export default {
      */
 
     let logs
-    if (global.jddvuePlatform === 'my') {
-      logs = global.jddvue.getStorageSync({key: 'logs'}).data || []
+    if (jddvuePlatform === 'my') {
+      logs = jddvue.getStorageSync({key: 'logs'}).data || []
       logs.unshift(Date.now())
-      global.jddvue.setStorageSync({
+      jddvue.setStorageSync({
         key: 'logs',
         data: logs
       })
     } else {
-      logs = global.jddvue.getStorageSync('logs') || []
+      logs = jddvue.getStorageSync('logs') || []
       logs.unshift(Date.now())
-      global.jddvue.setStorageSync('logs', logs)
+      jddvue.setStorageSync('logs', logs)
     }
   },
   onLaunch(){
     // 获取用户信息 上报app初始化事件
-    global.jddvue.getSetting({
+    jddvue.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          global.jddvue.getUserInfo({
+          jddvue.getUserInfo({
             success: res => {
               // 设置数据
               qd.setData(res.userInfo);

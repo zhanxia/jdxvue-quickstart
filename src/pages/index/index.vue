@@ -64,10 +64,10 @@ export default {
   methods: {
     bindViewTap () {
       const url = '../logs/main'
-      if (global.jddvuePlatform === 'wx') {
-        global.jddvue.switchTab({ url })
+      if (jddvuePlatform === 'wx') {
+        jddvue.switchTab({ url })
       } else {
-        global.jddvue.navigateTo({ url })
+        jddvue.navigateTo({ url })
       }
     },
     clickHandle (ev) {
