@@ -1,6 +1,7 @@
 require('./check-versions')()
 
 process.env.PLATFORM = process.argv[process.argv.length - 1] || 'jd'
+console.log('process.env.PLATFORM', process.argv[process.argv.length - 1])
 var config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)

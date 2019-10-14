@@ -1,5 +1,5 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
-// process.env.PLATFORM = process.argv[process.argv.length - 1] || 'jd'
+process.env.PLATFORM = process.argv[process.argv.length - 1] || 'jd'
 var path = require('path')
 var fileExtConfig = {
   jd: {
@@ -7,10 +7,15 @@ var fileExtConfig = {
     script: 'js',
     style: 'jxss',
     platform: 'jd'
+  },
+  wx: {
+    template: 'wxml',
+    script: 'js',
+    style: 'wxss',
+    platform: 'wx'
   }
 }
-// var fileExt = fileExtConfig[process.env.PLATFORM]
-var fileExt = fileExtConfig['jd']
+var fileExt = fileExtConfig[process.env.PLATFORM]
 module.exports = {
   build: {
     env: require('./prod.env'),

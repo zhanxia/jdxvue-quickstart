@@ -46,11 +46,11 @@ let baseWebpackConfig = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue': 'jdmpvue',
+      'vue': 'jddvue',
       '@': resolve('src')
     },
     symlinks: false,
-    aliasFields: ['jdmpvue', 'weapp', 'browser'],
+    aliasFields: ['jddvue', 'weapp', 'browser'],
     mainFields: ['browser', 'module', 'main']
   },
   module: {
@@ -66,7 +66,7 @@ let baseWebpackConfig = {
       // },
       {
         test: /\.vue$/,
-        loader: 'jdmpvue-loader',
+        loader: 'jddvue-loader',
         options: vueLoaderConfig
       },
       {
@@ -75,7 +75,7 @@ let baseWebpackConfig = {
         use: [
           'babel-loader',
           {
-            loader: 'jdmpvue-loader',
+            loader: 'jddvue-loader',
             options: Object.assign({checkMPEntry: true}, vueLoaderConfig)
           }
         ]
@@ -109,8 +109,8 @@ let baseWebpackConfig = {
   plugins: [
     // api 统一桥协议方案
     new webpack.DefinePlugin({
-      'mpvue': 'global.mpvue',
-      'mpvuePlatform': 'global.mpvuePlatform'
+      'jddvue': 'global.jddvue',
+      'jddvuePlatform': 'global.jddvuePlatform'
     }),
     new MpvuePlugin(),
     new CopyWebpackPlugin([{

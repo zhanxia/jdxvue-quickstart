@@ -6,33 +6,33 @@ export default {
   created () {
     // 调用API从本地缓存中获取数据
     /*
-     * 平台 api 差异的处理方式:  api 方法统一挂载到 jdmpvue 名称空间, 平台判断通过 jdmpvuePlatform 特征字符串
-     * 微信：jdmpvue === wx, jdmpvuePlatform === 'wx'
-     * 头条：jdmpvue === tt, jdmpvuePlatform === 'tt'
-     * 百度：jdmpvue === swan, jdmpvuePlatform === 'swan'
-     * 支付宝(蚂蚁)：jdmpvue === my, jdmpvuePlatform === 'my'
+     * 平台 api 差异的处理方式:  api 方法统一挂载到 jddvue 名称空间, 平台判断通过 jddvuePlatform 特征字符串
+     * 微信：jddvue === wx, jddvuePlatform === 'wx'
+     * 头条：jddvue === tt, jddvuePlatform === 'tt'
+     * 百度：jddvue === swan, jddvuePlatform === 'swan'
+     * 支付宝(蚂蚁)：jddvue === my, jddvuePlatform === 'my'
      */
 
     let logs
-    if (global.jdmpvuePlatform === 'my') {
-      logs = global.jdmpvue.getStorageSync({key: 'logs'}).data || []
+    if (global.jddvuePlatform === 'my') {
+      logs = global.jddvue.getStorageSync({key: 'logs'}).data || []
       logs.unshift(Date.now())
-      global.jdmpvue.setStorageSync({
+      global.jddvue.setStorageSync({
         key: 'logs',
         data: logs
       })
     } else {
-      logs = global.jdmpvue.getStorageSync('logs') || []
+      logs = global.jddvue.getStorageSync('logs') || []
       logs.unshift(Date.now())
-      global.jdmpvue.setStorageSync('logs', logs)
+      global.jddvue.setStorageSync('logs', logs)
     }
   },
   onLaunch(){
     // 获取用户信息 上报app初始化事件
-    global.jdmpvue.getSetting({
+    global.jddvue.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          global.jdmpvue.getUserInfo({
+          global.jddvue.getUserInfo({
             success: res => {
               // 设置数据
               qd.setData(res.userInfo);

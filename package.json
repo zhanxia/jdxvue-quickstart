@@ -1,17 +1,18 @@
 {
-  "name": "{{name}}",
+  "name": "vue-test",
   "version": "1.0.0",
-  "author": "{{author}}",
-  "description": "{{description}}",
+  "author": "jzx",
+  "description": "test",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
+    "dev": "node build/dev-server.js jd",
+    "dev:wx": "node build/dev-server.js wx",
     "start": "npm run dev",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "jdmpvue": "^2.0.3",
+    "jddvue": "^2.0.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -44,8 +45,8 @@
     "glob": "^7.1.2",
     "html-webpack-plugin": "^3.2.0",
     "http-proxy-middleware": "^0.18.0",
-    "jdmpvue-loader": "^2.0.8",
-    "jdmpvue-template-compiler": "^2.0.3",
+    "jddvue-loader": "^2.0.8",
+    "jddvue-template-compiler": "^2.0.3",
     "mkdirp": "^0.5.1",
     "mpvue-webpack-target": "^1.0.3",
     "optimize-css-assets-webpack-plugin": "^3.2.0",

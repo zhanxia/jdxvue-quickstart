@@ -50,7 +50,7 @@ export default {
     return {
       motto: 'Hello jdminiprograme',
       userInfo: {
-        nickName: 'jdmpvue',
+        nickName: 'jddvue',
         avatarUrl: 'https://m.360buyimg.com/jrqb/jfs/t1/38358/8/15477/5901/5d64d6a6E7f1bda92/376cb86d2dba7cd8.png'
       },
       checkedNames: []
@@ -64,10 +64,10 @@ export default {
   methods: {
     bindViewTap () {
       const url = '../logs/main'
-      if (global.jdmpvuePlatform === 'wx') {
-        global.jdmpvue.switchTab({ url })
+      if (global.jddvuePlatform === 'wx') {
+        global.jddvue.switchTab({ url })
       } else {
-        global.jdmpvue.navigateTo({ url })
+        global.jddvue.navigateTo({ url })
       }
     },
     clickHandle (ev) {
