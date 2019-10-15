@@ -8,24 +8,17 @@ export default {
     /*
      * 平台 api 差异的处理方式:  api 方法统一挂载到 jddvue 名称空间, 平台判断通过 jddvuePlatform 特征字符串
      * 微信：jddvue === wx, jddvuePlatform === 'wx'
-     * 头条：jddvue === tt, jddvuePlatform === 'tt'
-     * 百度：jddvue === swan, jddvuePlatform === 'swan'
-     * 支付宝(蚂蚁)：jddvue === my, jddvuePlatform === 'my'
+     * 京东：jddvue === jd, jddvuePlatform === 'jd'
+     * h5：jddvue === window, jddvuePlatform === 'h5'
      */
 
     let logs
-    if (jddvuePlatform === 'my') {
-      logs = jddvue.getStorageSync({key: 'logs'}).data || []
-      logs.unshift(Date.now())
-      jddvue.setStorageSync({
-        key: 'logs',
-        data: logs
-      })
-    } else {
-      logs = jddvue.getStorageSync('logs') || []
-      logs.unshift(Date.now())
-      jddvue.setStorageSync('logs', logs)
-    }
+    logs = jddvue.getStorageSync({key: 'logs'}).data || []
+    logs.unshift(Date.now())
+    jddvue.setStorageSync({
+      key: 'logs',
+      data: logs
+    })
   },
   onLaunch(){
     // 获取用户信息 上报app初始化事件

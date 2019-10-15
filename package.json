@@ -7,13 +7,19 @@
   "scripts": {
     "dev": "node build/dev-server.js jd",
     "dev:wx": "node build/dev-server.js wx",
+    "dev:h5": "node buildh5/dev-server.js",
     "start": "npm run dev",
     "build": "node build/build.js jd",
     "build:wx": "node build/build.js wx",
+    "build:h5": "node buildh5/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "jddvue": "^1.0.0",
+    "lib-flexible": "^0.3.2",
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -50,12 +56,14 @@
     "jddvue-template-compiler": "^1.0.1",
     "mkdirp": "^0.5.1",
     "mpvue-webpack-target": "^1.0.3",
+    "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^2.0.0",
     "portfinder": "^1.0.13",
     "postcss-loader": "^2.1.4",
     "postcss-mpvue-wxss": "^1.0.0",
     "prettier": "~1.12.1",
+    "px2rem-loader": "^0.1.9",
     "px2rpx-loader": "^0.1.10",
     "relative": "^3.0.2",
     "rimraf": "^2.6.0",
@@ -64,9 +72,12 @@
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
     "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.2",
     "webpack": "^3.11.0",
     "webpack-bundle-analyzer": "^2.2.1",
+    "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-middleware-hard-disk": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0",
     "webpack-mpvue-asset-plugin": "^2.0.0",
     "webpack-mpvue-vendor-plugin": "^2.0.0"

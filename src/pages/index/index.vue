@@ -32,7 +32,8 @@
       <span>Checked names: {{ checkedNames }}</span>
     </div>
 
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
+    <a href="/pages/counter/main" class="counter" v-if="jddvuePlatform != 'h5'">去往Vuex示例页面</a>
+    <router-link to="counter" class="counter" @click="_goVuexPage" v-else>去往Vuex示例页面</router-link>
 
     <div class="all">
         <div class="left">
@@ -53,7 +54,8 @@ export default {
         nickName: 'jddvue',
         avatarUrl: 'https://m.360buyimg.com/jrqb/jfs/t1/38358/8/15477/5901/5d64d6a6E7f1bda92/376cb86d2dba7cd8.png'
       },
-      checkedNames: []
+      checkedNames: [],
+      jddvuePlatform:jddvuePlatform
     }
   },
 
@@ -64,19 +66,23 @@ export default {
   methods: {
     bindViewTap () {
       const url = '../logs/main'
-      if (jddvuePlatform === 'wx') {
+      if (jddvuePlatform != 'h5') {
         jddvue.switchTab({ url })
       } else {
-        jddvue.navigateTo({ url })
+        this.$router.push({ path:'/logs'})
       }
     },
     clickHandle (ev) {
       console.log('clickHandle:', ev)
       // throw {message: 'custom test'}
+    },
+    _goVuexPage(){
+
     }
   },
 
   created () {
+    console.log("jddvuePlatform",jddvuePlatform)
   }
 }
 </script>
@@ -88,9 +94,9 @@ export default {
 
 .userinfo-avatar {
   display: block;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx auto;
+  width: 128px;
+  height: 128px;
+  margin: 20px auto;
   border-radius: 50%;
 }
 
