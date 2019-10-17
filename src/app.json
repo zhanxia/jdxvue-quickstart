@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/demo/main",
+    "pages/webview/main",
     "pages/index/main",
     "pages/logs/main",
     "pages/counter/main"
@@ -7,7 +9,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "京东独家定制",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -18,7 +20,7 @@
 
     "list": [{
       "text": "首页",
-      "pagePath": "pages/index/main",
+      "pagePath": "pages/demo/main",
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
     }, {

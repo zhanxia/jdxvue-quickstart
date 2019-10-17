@@ -2,6 +2,6 @@
 
 module.exports = {
   "plugins": {
-    "postcss-mpvue-wxss": {}
+    // "postcss-mpvue-wxss": {}, // 打包或运行H5时需注释此行
   }
 }

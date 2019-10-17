@@ -1,8 +1,11 @@
 import Vue from 'vue'
-import App from './App'
+import AppJd from './App'
+import AppWx from './AppWx'
 
 Vue.config.productionTip = false
-App.mpType = 'app'
+AppJd.mpType = 'app'
+AppWx.mpType = 'app'
+// const app = new Vue(AppWx)
+const app = jddvuePlatform === 'jd' ? new Vue(AppJd) : new Vue(AppWx)
 
-const app = new Vue(App)
 app.$mount()

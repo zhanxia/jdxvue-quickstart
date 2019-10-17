@@ -1,5 +1,5 @@
 <script>
-// import qd from '@jddzt/qd-mini/dist/qd-vapp'
+// import qd from '@jddzt/qd-mini'
 // qd.init({
 //   appId: 'wx03c1876dabffec70', // 小程序 ID，必传
 //       dev: true, // 是否开启 dev 模式，建议测试环境设为 true，生产环境设为 false 或不设置
