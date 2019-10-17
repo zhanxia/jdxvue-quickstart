@@ -1,3 +1,5 @@
+process.env.PLATFORM = process.argv[process.argv.length - 1] || 'jd'
+
 var path = require('path')
 var fs = require('fs')
 var utils = require('./utils')
@@ -25,7 +27,8 @@ function getEntry (rootSrc) {
   return map
 }
 
-const appEntry = { app: resolve('./src/main.js') }
+const appEntryPath = process.env.PLATFORM === 'jd' ? './src/main.js' : './src/mainwx.js'
+const appEntry = { app: resolve(appEntryPath) }
 const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
 const entry = Object.assign({}, appEntry, pagesEntry)
 

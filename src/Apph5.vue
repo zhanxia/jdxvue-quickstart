@@ -4,9 +4,6 @@
   </div>
 </template>
 <script>
-// import qd from './utils/qd-vapp.js'
-// qd.init()
-
 export default {
   created () {console.log("jddvue",jddvue)
     let logs
