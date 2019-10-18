@@ -1,10 +1,10 @@
 <script>
-// import qd from '@jddzt/qd-mini/dist/qd-vapp'
-// qd.init({
-//   appId: '', // 小程序 ID，必传
-//   dev: true, // 是否开启 dev 模式，建议测试环境设为 true，生产环境设为 false 或不设置
-//   autoReport: true // 自动上报 App 启动埋点
-// })
+import qd from '@jddzt/qd-mini/dist/qd-vapp'
+qd.init({
+  appId: '', // 小程序 ID，必传
+  dev: true, // 是否开启 dev 模式，建议测试环境设为 true，生产环境设为 false 或不设置
+  autoReport: true // 自动上报 App 启动埋点
+})
 
 export default {
   created () {
@@ -17,18 +17,18 @@ export default {
      */
 
     let logs
-    logs = jddvue.getStorageSync({key: 'logs'}) && jddvue.getStorageSync({key: 'logs'}).data || []
+    logs = jddvue.getStorageSync('logs').data || []
     logs.unshift(Date.now())
-    jddvue.setStorageSync({
+    jddvue.setStorage({
       key: 'logs',
       data: logs
     })
   },
   onLaunch(){
     // 获取用户信息 上报app初始化事件
-    jddvue.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
+    // jddvue.getSetting({
+    //   success: res => {
+    //     if (res.authSetting['scope.userInfo']) {
           jddvue.getUserInfo({
             success: res => {
               // 设置数据
@@ -37,9 +37,9 @@ export default {
               qd.startApp();
             }
           });
-        }
-      }
-    });
+    //     }
+    //   }
+    // });
   },
   log () {
     console.log(`log at:${Date.now()}`)

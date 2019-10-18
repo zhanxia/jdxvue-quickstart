@@ -1,10 +1,10 @@
 import axios from './axios.conf.js'
 
-let baseURL = 'http://mmd.jd.com/mock/13'
+let baseURL = 'https://mmd.jd.com/mock/13'
 if (process.env.NODE_ENV === 'production') {
-  baseURL = 'http://mmd.jd.com/mock/13'
+  baseURL = 'https://mmd.jd.com/mock/13'
 } else {
-  baseURL = 'http://mmd.jd.com/mock/13'
+  baseURL = 'https://mmd.jd.com/mock/13'
 }
 
 function request (url = '',

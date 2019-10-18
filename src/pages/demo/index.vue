@@ -50,7 +50,15 @@ export default {
       }
     },
     _goNativePage(){
-
+      const h5url = 'https://bao.tjjt360.com/insurance/insuranceList/jrpt/homeList?sid=129d60f2e40130193729ff6f86dea1ew&utm_source=Android%2aurl%2a1571313398707&utm_medium=jrappshare&utm_term=wxfriends'
+      if (jddvuePlatform != 'h5') {
+        const url = `../webview/main?pageUrl=${encodeURIComponent(h5url)}`;
+        jddvue.navigateTo({
+          url
+        })
+      } else {
+        window.open(h5url)
+      }
     },
     // request
     queryData(){

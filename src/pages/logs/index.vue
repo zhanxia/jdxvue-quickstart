@@ -1,7 +1,7 @@
 <template>
   <div>
     <swiper indidator-dots="imgUrls.length > 1" v-if="jddvuePlatform != 'h5'">
-      <block v-if="imgUrls.length > 0" v-for="(item, index) in imgUrls" :key="index" >
+      <block v-for="(item, index) in imgUrls" :key="index" >
         <swiper-item>
           <image :src="item" mode="scaleToFill" class="swiper-img"></image>
         </swiper-item>
@@ -29,9 +29,9 @@ export default {
     return {
       logs: [],
       imgUrls: [
-        'http://img30.360buyimg.com/rent/s1920x740_jfs/t23257/182/519649404/487252/53062681/5b335375N60dd87c9.jpg',
+        'https://img30.360buyimg.com/rent/s1920x740_jfs/t23257/182/519649404/487252/53062681/5b335375N60dd87c9.jpg',
         'https://m.360buyimg.com/jrqb/jfs/t1/65899/23/6743/1356136/5d4d469fEd6ece651/8cce19ad02c89136.png',
-        'http://img30.360buyimg.com/rent/s1920x740_jfs/t23257/182/519649404/487252/53062681/5b335375N60dd87c9.jpg'
+        'https://img30.360buyimg.com/rent/s1920x740_jfs/t23257/182/519649404/487252/53062681/5b335375N60dd87c9.jpg'
       ],
       jddvuePlatform:jddvuePlatform
     }
