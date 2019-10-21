@@ -16,6 +16,9 @@ function request (url = '',
   if (jddvuePlatform !== 'h5') {
     params = JSON.stringify(params)
     const promise = new Promise((resolve, reject) => {
+      jddvue.showLoading({
+        title: '加载中...'
+      })
       jddvue.request({
         url: `${baseURL}${url}`,
         data: {
@@ -28,6 +31,9 @@ function request (url = '',
         error: function (err) {
           console.log(err)
           reject(err)
+        },
+        complete: (e) => {
+          jddvue.hideLoading()
         }
       })
     })
