@@ -41,6 +41,14 @@
       "icon": "static/tabs/orders.png",
       "activeIcon": "static/tabs/orders-active.png"
     }],
-    "position": "bottom"
+    "position": "bottom",
+    "subPackages": [
+      {
+        "root": "pages/package",
+        "pages": [
+          "pages/index/main"
+        ]
+      }
+    ]
   }
 }
