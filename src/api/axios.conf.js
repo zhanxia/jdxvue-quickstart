@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-let baseURL = '//mmd.jd.com/mock/13'
+let baseURL = '//m.jr.jd.com/mjractivity'
 if (process.env.NODE_ENV === 'production') {
-  baseURL = '//mmd.jd.com/mock/13'
+  baseURL = '//m.jr.jd.com/mjractivity'
 } else {
-  baseURL = '//mmd.jd.com/mock/13'
+  baseURL = '//m.jr.jd.com/mjractivity'
 }
 
 const instance = axios.create({

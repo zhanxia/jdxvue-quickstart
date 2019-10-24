@@ -17,7 +17,9 @@ export default {
         bannerList:[],
         button:{},
         share:{},
-        title:{}
+        title: {
+          'imgurl': 'http://img30.360buyimg.com/jr_image/jfs/t1/83444/16/12592/382517/5da04c59E33a6dcf9/d3b0b9936ad65d33.png'
+        }
       },
       jddvuePlatform:jddvuePlatform
     }
@@ -62,13 +64,40 @@ export default {
     },
     // request
     queryData(){
+      const self = this;
       api.queryIndexData().then(res => {
         console.log("res",res)
-        this.indexData = {
-          ...this.indexData,
+        self.indexData = {
+          ...self.indexData,
           ...res
         };
       });
+      // jddvue.showLoading({
+      //   title: '加载中...'
+      // })
+      // console.log("res1111")
+      // jddvue.request({
+      //   // url: 'http://mmd.jd.com/mock/13/mockdata',
+      //   url: 'https://m.jr.jd.com/mjractivity/data_source_100002476.json',
+      //   param:'',
+      //   header: {
+      //     'content-type': 'application/json'
+      //   },
+      //   success: function (res) {
+      //     console.log("res1-success",res)
+      //     self.indexData = {
+      //       ...self.indexData,
+      //       ...res.data
+      //     };
+      //   },
+      //   fail: function (err) {
+      //     console.log("res1-err",err)
+      //   },
+      //   complete: (e) => {
+      //     console.log("res1-complete",e)
+      //     jddvue.hideLoading()
+      //   }
+      // })
     }
   },
 
