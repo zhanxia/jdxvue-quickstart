@@ -19,7 +19,8 @@ function resolve (dir) {
 
 function getEntry (rootSrc) {
   var map = {}
-  glob.sync(rootSrc + '/pages/**/main.js')
+  // glob.sync(rootSrc + '/pages/**/main.js')
+  glob.sync(rootSrc + '/pages/**/index.js')
     .forEach(file => {
       var key = relative(rootSrc, file).replace('.js', '')
       map[key] = file
@@ -29,7 +30,8 @@ function getEntry (rootSrc) {
 
 const appEntryPath = process.env.PLATFORM === 'jd' ? './src/main.js' : './src/mainwx.js'
 const appEntry = { app: resolve(appEntryPath) }
-const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
+// const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
+const pagesEntry = getEntry(resolve('./src'), 'pages/**/index.js')
 const entry = Object.assign({}, appEntry, pagesEntry)
 
 let baseWebpackConfig = {

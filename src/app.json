@@ -1,10 +1,8 @@
 {
   "pages": [
-    "pages/demo/main",
-    "pages/webview/main",
-    "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "pages/index/index",
+    "pages/logs/index",
+    "pages/webview/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,35 +18,28 @@
 
     "list": [{
       "text": "首页",
-      "pagePath": "pages/demo/main",
+      "pagePath": "pages/index/index",
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
     }, {
       "text": "记录",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/logs/index",
       "iconPath": "static/tabs/orders.png",
       "selectedIconPath": "static/tabs/orders-active.png"
     }],
 
     "items": [{
       "name": "首页",
-      "pagePath": "pages/index/main",
+      "pagePath": "pages/index/index",
       "icon": "static/tabs/home.png",
       "activeIcon": "static/tabs/home-active.png"
     }, {
       "name": "记录",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/logs/index",
       "icon": "static/tabs/orders.png",
       "activeIcon": "static/tabs/orders-active.png"
     }],
-    "position": "bottom",
-    "subPackages": [
-      {
-        "root": "pages/package",
-        "pages": [
-          "pages/index/main"
-        ]
-      }
-    ]
+    "position": "bottom"
+    
   }
 }

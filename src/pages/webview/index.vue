@@ -1,5 +1,5 @@
 <template>
-  <web-view :src="pageUrl"></web-view>
+  <web-view :src="pageUrl">{{pageUrl}}</web-view>
 </template>
 <script>
 export default {
@@ -8,8 +8,11 @@ export default {
       pageUrl:''
     }
   },
-  mounted(){
+  mounted () {
+    console.log("webview111",this)
+    console.log("options.pageUrl",this.$root.$mp.query.pageUrl)
     const url = decodeURIComponent(this.$root.$mp.query.pageUrl)
+    console.log("url",url)
     this.pageUrl = url
   }
 }

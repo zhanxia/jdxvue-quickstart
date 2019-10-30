@@ -41,7 +41,7 @@ function request (url = '',
 
     return promise
   } else {
-    return axios.post(url, params)
+    return axios.post('/mockdata', params)
   }
 }
 

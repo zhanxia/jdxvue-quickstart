@@ -16,13 +16,10 @@ export default {
      * h5：jddvue === window, jddvuePlatform === 'h5'
      */
 
-    let logs
-    logs = jddvue.getStorageSync('logs').data || []
+    let logs = []
+    logs = jddvue.getStorageSync('logs') || []
     logs.unshift(Date.now())
-    jddvue.setStorage({
-      key: 'logs',
-      data: logs
-    })
+    jddvue.setStorageSync('logs',logs)
   },
   onLaunch(){
     // 获取用户信息 上报app初始化事件

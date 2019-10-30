@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import index from '../pages/index/index.vue'
-import demo from '../pages/demo/index.vue'
+// import demo from '../pages/demo/index.vue'
 import logs from '../pages/logs/index.vue'
-import counter from '../pages/counter/index.vue'
+// import counter from '../pages/counter/index.vue'
 
 Vue.use(Router)
 
@@ -11,8 +11,8 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'index',
-    component: demo,
-    alias: '/pages/demo/main'
+    component: index,
+    alias: '/pages/index/index'
   }, 
   // {
   //   path: '/',
@@ -24,11 +24,6 @@ export default new Router({
     path: '/logs',
     name: 'logs',
     component: logs,
-    alias: '/pages/logs/main'
-  }, {
-    path: '/counter',
-    name: 'counter',
-    component: counter,
-    alias: '/pages/counter/main'
+    alias: '/pages/logs/index'
   }]
 })

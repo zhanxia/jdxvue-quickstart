@@ -38,14 +38,15 @@ export default {
   },
 
   created () {
+    let logs
     if(jddvuePlatform != 'h5'){
-      let logs = jddvue.getStorageSync('logs') || []
-      this.logs = logs.map(log => formatTime(new Date(log)))
+      logs = jddvue.getStorageSync('logs');
     }else{
-      let logs = JSON.parse(localStorage.getItem('logs')) || []
-      this.logs = logs.map(log => formatTime(new Date(log)))
+      logs = localStorage.getItem('logs');
     }
-    
+    logs = logs ? logs : []
+    console.log("logs",logs)
+    this.logs = logs.map(log => formatTime(new Date(log)))
   }
 }
 </script>
