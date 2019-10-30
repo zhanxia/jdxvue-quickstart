@@ -5,10 +5,6 @@
 ## Build Setup
 
 ``` bash
-# 初始化项目
-jddvue init myproject
-cd myproject
-
 # 安装依赖
 npm install
 
